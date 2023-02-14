@@ -8,16 +8,30 @@
   <body>
     <h1><a href="index.html">유격대 4대 천왕</a></h1>
     <input class = "day" type="button" value="day" onclick="
-//      var day = document.getElementsByClassName("day");
-//    day.style.backgroundColor = 'white';
       document.querySelector('body').style.backgroundColor = 'white';
       document.querySelector('body').style.color = 'black';
-      document.querySelector('a').style.color = 'black';
+
+      var lis = document.getElementsByTagName('a');
+      for(var i=0; i < lis.length; i++){
+        lis[i].style.color = 'black';
+      }
+      document.querySelector('h1').style.borderBottomColor = 'black';
+
+      var grid = document.getElementById('grid');
+      grid.querySelector('ol').style.borderRightColor = 'black';
     ">
     <input class = "night" type="button" value="night" onclick="
       document.querySelector('body').style.backgroundColor = 'black';
       document.querySelector('body').style.color = 'white';
-      document.querySelector('a').style.color = 'white';
+
+      var lis = document.getElementsByTagName('a');
+      for(var i=0; i < lis.length; i++){
+        lis[i].style.color = 'white';
+      }
+      document.querySelector('h1').style.borderBottomColor = 'white';
+
+      var grid = document.getElementById('grid');
+      grid.querySelector('ol').style.borderRightColor = 'white';
     ">
     <div id="grid">
       <ol>
