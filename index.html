@@ -8,33 +8,29 @@
   <body>
     <h1><a href="index.html">유격대 4대 천왕</a></h1>
     <input id="night_day" type="button" value="night" onclick="
-      if(document.querySelector('#night_day').value === 'night'){
-        document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.color = 'white';
+      var target = document.querySelector('body');
+      var lis = document.getElementsByTagName('a');
+      var target2 =document.querySelector('h1');
+      var border = document.getElementById('grid').querySelector('ol');
 
-        var lis = document.getElementsByTagName('a');
+      if(this.value === 'night'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
         for(var i=0; i < lis.length; i++){
           lis[i].style.color = 'white';
         }
-        document.querySelector('h1').style.borderBottomColor = 'white';
-
-        var grid = document.getElementById('grid');
-        grid.querySelector('ol').style.borderRightColor = 'white';
-
-        document.querySelector('#night_day').value = 'day';
+        target2.style.borderBottomColor = 'white';
+        border.style.borderRightColor = 'white';
+        this.value = 'day';
       } else {
-        document.querySelector('body').style.backgroundColor = 'white';
-        document.querySelector('body').style.color = 'black';
-
-        var lis = document.getElementsByTagName('a');
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
         for(var i=0; i < lis.length; i++){
           lis[i].style.color = 'black';
         }
-        document.querySelector('h1').style.borderBottomColor = 'black';
-
-        var grid = document.getElementById('grid');
-        grid.querySelector('ol').style.borderRightColor = 'black';
-        document.querySelector('#night_day').value = 'night';
+        target2.style.borderBottomColor = 'black';
+        border.style.borderRightColor = 'black';
+        this.value = 'night';
       }
     ">
     <div id="grid">
