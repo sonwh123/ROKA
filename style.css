@@ -18,12 +18,7 @@
    margin : 0px;
    padding : 30px;
  }
- body .night {
-   position : absolute;
-   right : 47px;
-   top : 105px;
- }
- body .day {
+ body #night_day {
    position : absolute;
    right : 5px;
    top : 105px;
