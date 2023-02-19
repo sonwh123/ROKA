@@ -4,34 +4,38 @@
     <title>교육지원대대 유격교육대</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <script>
+      function changeDayNight(c1, c2, self) {
+        var target = document.querySelector('body');
+        var lis = document.getElementsByTagName('a');
+
+        target.style.backgroundColor = c1;
+        target.style.color = c2;
+        for(var i=0; i < lis.length; i++){
+          lis[i].style.color = c2;
+        }
+        document.querySelector('h1').style.borderBottomColor = c2;
+        document.getElementById('grid').querySelector('ol').style.borderRightColor = c2;
+        if(c1 === 'black'){
+          self.value = 'day';
+        } else {
+          self.value = 'night';
+        }
+      }
+
+      function nightDayHandler(self) {
+        if(self.value === 'night'){
+          changeDayNight('black', 'white', self);
+        } else {
+          changeDayNight('white', 'black', self);
+        }
+      }
+    </script>
   </head>
   <body>
     <h1><a href="index.html">유격대 4대 천왕</a></h1>
     <input id="night_day" type="button" value="night" onclick="
-      var target = document.querySelector('body');
-      var lis = document.getElementsByTagName('a');
-      var target2 =document.querySelector('h1');
-      var border = document.getElementById('grid').querySelector('ol');
-
-      if(this.value === 'night'){
-        target.style.backgroundColor = 'black';
-        target.style.color = 'white';
-        for(var i=0; i < lis.length; i++){
-          lis[i].style.color = 'white';
-        }
-        target2.style.borderBottomColor = 'white';
-        border.style.borderRightColor = 'white';
-        this.value = 'day';
-      } else {
-        target.style.backgroundColor = 'white';
-        target.style.color = 'black';
-        for(var i=0; i < lis.length; i++){
-          lis[i].style.color = 'black';
-        }
-        target2.style.borderBottomColor = 'black';
-        border.style.borderRightColor = 'black';
-        this.value = 'night';
-      }
+      nightDayHandler(this);
     ">
     <div id="grid">
       <ol>
