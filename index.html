@@ -4,45 +4,7 @@
     <title>교육지원대대 유격교육대</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <script>
-      var Body = {
-        setBackgroundColor : function(color) {
-          document.querySelector('body').style.backgroundColor = color;
-        },
-        setColor : function(color) {
-          document.querySelector('body').style.color = color;
-        }
-      }
-      var Links = {
-        setColor : function(color) {
-          var lis = document.getElementsByTagName('a');
-          for(var i=0; i < lis.length; i++){
-            lis[i].style.color = color;
-          }
-        }
-      }
-
-      function changeDayNight(c1, c2, self) {
-        Body.setBackgroundColor(c1);
-        Body.setColor(c2);
-        Links.setColor(c2);
-        document.querySelector('h1').style.borderBottomColor = c2;
-        document.getElementById('grid').querySelector('ol').style.borderRightColor = c2;
-        if(c1 === 'black'){
-          self.value = 'day';
-        } else {
-          self.value = 'night';
-        }
-      }
-
-      function nightDayHandler(self) {
-        if(self.value === 'night'){
-          changeDayNight('black', 'white', self);
-        } else {
-          changeDayNight('white', 'black', self);
-        }
-      }
-    </script>
+    <script src="colors.js"></script>
   </head>
   <body>
     <h1><a href="index.html">유격대 4대 천왕</a></h1>
@@ -51,12 +13,7 @@
     ">
     <div id="grid">
       <ol>
-        <script>
-          var menu = ["손영훈", "김준수", "유원준", "김재민"]
-          for(var i = 0; i < menu.length; i++) {
-            document.write('<li><a href = "' + (i+1) + '.html">' + menu[i] + '</a></li>');
-          }
-        </script>
+        <script src="menu.js"></script>
       </ol>
     </div>
   </body>
