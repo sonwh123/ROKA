@@ -1,3 +1,7 @@
+ html::-webkit-scrollbar {
+   display: none;
+ }
+ 
  body {
    margin : 0;
  }
@@ -40,5 +44,26 @@
    }
    ol {
      border-right : none;
+   }
+ }
+ @media (max-width:367px){
+   body #night_day {
+     position : absolute;
+     right : 5px;
+     top : 165px;
+   }
+ }
+ @media (max-width:216px){
+   body #night_day {
+     position : absolute;
+     right : 5px;
+     top : 225px;
+   }
+ }
+ @media (max-width:171px){
+   body #night_day {
+     position : absolute;
+     right : 5px;
+     top : 285px;
    }
  }
